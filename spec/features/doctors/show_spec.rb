@@ -63,7 +63,7 @@ describe 'doctors show page' do
         click_button("Remove")
       end
 
-      expect(current_path).to eq(doctor_path)
+      expect(current_path).to eq("/doctors/#{@doctor.id}")
       expect(page).not_to have_css("#patient-#{@patient_1.id}")
     end
   end
