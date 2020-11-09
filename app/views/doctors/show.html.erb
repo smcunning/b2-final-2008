@@ -11,7 +11,7 @@
   <% @doctor.patients.each do |patient| %>
     <section id="patient-<%= patient.id %>">
       <p><%= patient.name %></p>
-      <%= button_to "Remove", "/doctor/patients/#{patient.id}", method: :delete %>
+      <%= button_to "Remove", "/patient_doctors/#{patient.get_pd(@doctor)}", method: :delete %>
     </section>
   <% end %>
 </section>
