@@ -27,7 +27,7 @@ describe 'doctors show page' do
 
     it 'has the name of the hospital where the doctor works' do
       within ".doctor-details" do
-        expect(page).to have_content(@doctor.hospital)
+        expect(page).to have_content(@doctor.hospital.name)
       end
     end
 
