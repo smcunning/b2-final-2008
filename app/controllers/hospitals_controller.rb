@@ -1,4 +1,5 @@
 class HospitalsController < ApplicationController
   def show
-  end 
+    @hospital = Hospital.find(params[:id])
+  end
 end
