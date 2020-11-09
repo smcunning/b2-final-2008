@@ -9,6 +9,9 @@
 <h2>All Current Patiens</h2>
 <section class="all-patients">
   <% @doctor.patients.each do |patient| %>
-    <p><%= patient.name %></p>
+    <section id="patient-<%= patient.id %>">
+      <p><%= patient.name %></p>
+      <%= button_to "Remove", "/doctor/patients/#{patient.id}", method: :delete %>
+    </section>
   <% end %>
 </section>
