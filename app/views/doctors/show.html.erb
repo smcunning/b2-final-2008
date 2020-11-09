@@ -1,0 +1,14 @@
+<h1>Information For<%= @doctor.name %></h1>
+<section class="doctor-details">
+  <h4>Name: <%= @doctor.name %></h4><br />
+  <h4>Specialty: <%= @doctor.specialty %></h4><br />
+  <h4>Education: <%= @doctor.education %></h4><br />
+  <h4>Currently Serving At: <%= @doctor.hospital.name %></h4><br />
+</section>
+
+<h2>All Current Patiens</h2>
+<section class="all-patients">
+  <% @doctor.patients.each do |patient| %>
+    <p><%= patient.name %></p>
+  <% end %>
+</section>
