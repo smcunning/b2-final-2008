@@ -5,4 +5,8 @@ class Patient < ApplicationRecord
   def self.names_by_age
     order("age desc").pluck(:name)
   end
+
+  def get_pd(doctor)
+    self.patient_doctors.where(doctor: doctor).first.id
+  end
 end
