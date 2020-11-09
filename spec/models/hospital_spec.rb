@@ -13,13 +13,13 @@ describe Hospital, type: :model do
       @doctor_3 = Doctor.create!(name: "Miranda Bailey", specialty: "General Surgery", education: "Johns Hopkins University", hospital_id: @hospital.id)
       @doctor_4 = Doctor.create!(name: "Derek McDreamy Shepherd", specialty: "Attending Surgeon", education: "University of Pennsylvania", hospital_id: @hospital.id)
     end
+
     it "#total_doctors" do
       expect(@hospital.total_doctors).to eq(4)
     end
 
     it "find_unique_universities" do
       expected = ["Harvard University", "Johns Hopkins University", "University of Pennsylvania"]
-
       expect(@hospital.find_unique_universities).to eq(expected)
     end
   end
