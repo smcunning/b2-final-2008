@@ -12,11 +12,10 @@ describe Patient, type: :model do
       @patient_2 = Patient.create!(name: "Denny Duquette", age: 39)
       @patient_3 = Patient.create!(name: "Rebecca Pope", age: 32)
       @patient_4 = Patient.create!(name: "Zola Shepherd", age: 2)
-      @all_patients = Patient.all
 
       expected = ["Denny Duquette", "Rebecca Pope", "Katie Bryce", "Zola Shepherd"]
 
-      expect(@all_patients.names_by_age).to eq(expected)
+      expect(Patient.names_by_age).to eq(expected)
     end
   end
 end
