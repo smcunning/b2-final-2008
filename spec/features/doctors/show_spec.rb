@@ -39,5 +39,32 @@ describe 'doctors show page' do
         expect(page).to have_content(@patient_4.name)
       end
     end
+
+    it 'has a button to remove that patient from that doctor' do
+      within "#patient-#{@patient_1.id}" do
+        expect(page).to have_button("Remove")
+      end
+
+      within "#patient-#{@patient_2.id}" do
+        expect(page).to have_button("Remove")
+      end
+
+      within "#patient-#{@patient_3.id}" do
+        expect(page).to have_button("Remove")
+      end
+
+      within "#patient-#{@patient_4.id}" do
+        expect(page).to have_button("Remove")
+      end
+    end
+
+    it 'I can click that button to remove patient from show page' do
+      within "#patient-#{@patient_1.id}" do
+        click_button("Remove")
+      end
+
+      expect(current_path).to eq(doctor_path)
+      expect(page).not_to have_css("#patient-#{@patient_1.id}")
+    end
   end
 end
