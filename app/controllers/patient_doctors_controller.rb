@@ -1,12 +1,11 @@
 class PatientDoctorsController < ApplicationController
   def destroy
-    @pd = PatientDoctor.where(patient_id: patient_params[:id])
-    @pd.first.delete
+    @pd = PatientDoctor.find(pd_params[:id]).destroy
     redirect_to request.referrer
   end
 
   private
-  def patient_params
+  def pd_params
     params.permit(:id)
   end
 end
