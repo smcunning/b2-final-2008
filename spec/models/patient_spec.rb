@@ -17,5 +17,14 @@ describe Patient, type: :model do
 
       expect(Patient.names_by_age).to eq(expected)
     end
+
+    it "#get_pd" do
+      @hospital = Hospital.create!(name: "Grey Sloan Memorial Hospital")
+      @patient_1 = Patient.create!(name: "Katie Bryce", age: 24)
+      @doctor = Doctor.create!(name: "Meredith Grey", specialty: "General Surgery", education: "Harvard University", hospital_id: @hospital.id)
+      @pd = PatientDoctor.create!(doctor_id: @doctor.id, patient_id: @patient_1.id)
+
+      expect(@patient_1.get_pd(@doctor)).to eq(@pd.id)
+    end
   end
 end
