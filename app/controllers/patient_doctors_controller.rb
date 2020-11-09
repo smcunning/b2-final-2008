@@ -1,5 +1,4 @@
 class PatientDoctorsController < ApplicationController
-
   def destroy
     @pd = PatientDoctor.where(patient_id: patient_params[:id])
     @pd.first.delete
