@@ -9,7 +9,7 @@ describe 'hospitals show page' do
       @doctor_3 = Doctor.create!(name: "Miranda Bailey", specialty: "General Surgery", education: "Johns Hopkins University", hospital_id: @hospital.id)
       @doctor_4 = Doctor.create!(name: "Derek McDreamy Shepherd", specialty: "Attending Surgeon", education: "University of Pennsylvania", hospital_id: @hospital.id)
 
-        visit "/hospitals/#{@hospital.id}"
+      visit "/hospitals/#{@hospital.id}"
     end
 
     it 'shows the hospitals name' do
